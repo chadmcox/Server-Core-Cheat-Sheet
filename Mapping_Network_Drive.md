@@ -3,6 +3,7 @@
 ## Using PSDrive in PowerShell
 ```
 get-help about_providers
+
 ```
 
 * No seperate credentials needed
@@ -13,6 +14,11 @@ New-PSDrive -Name "X" -PSProvider FileSystem -Root $network_path
 ```
 $cred = get-credential
 New-PSDrive -Name "X" -PSProvider FileSystem -Root $network_path -credential $cred
+```
+* View Mapped Drive
+```
+get-psdrive
+get-psdrive -provider FileSystem
 ```
 * Disconnect drive
 ```
@@ -28,6 +34,10 @@ net use x: \\server\share
 * using seperate credential
 ```
 net use x: \\server\share /user:contoso\user
+```
+* View Network Drive
+```
+net use
 ```
 * To disconnect share
 ```
