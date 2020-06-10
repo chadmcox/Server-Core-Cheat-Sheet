@@ -26,7 +26,7 @@ Get-Counter -ListSet Memory | select -expandproperty Paths
 Get-Counter -Counter "\physicaldisk(_total)\current disk queue length“
 ```
 * To get 5 collections of a counter
-'''
+```
 Get-Counter -Counter "\physicaldisk(_total)\current disk queue length" -MaxSamples 5 
 ```
 * To get a continuous collection of a counter
