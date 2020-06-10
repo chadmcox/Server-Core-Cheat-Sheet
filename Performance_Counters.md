@@ -40,7 +40,7 @@ get-counter  | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 |
     instancename, CookedValue | format-table -AutoSize -wrap -GroupBy object
 ```
 # Useful Examples
-* View Domain Controller Related Counters
+## View Domain Controller Related Counters
 * Store Domain Controller Counter Objects in Array for the cmdlet to use
 ```
 $counters = "\Netlogon(_Total)\*","\Security System-Wide Statistics\NTLM Authentications", `
@@ -67,9 +67,14 @@ get-counter -Counter $counters | select -ExpandProperty CounterSamples | where c
  ```
  * Create a blg getting sample every 15 seconds, with a max of 40 samples
  ```
- get-counter -Counter $counters -PipelineVariable perfcounter -SampleInterval 15 -MaxSamples 40 | Export-Counter -Path ".\dc_perf_collection.blg"
+ get-counter -Counter $counters -PipelineVariable perfcounter -SampleInterval 15 -MaxSamples 40 | `
+    Export-Counter -Path ".\dc_perf_collection.blg"
  ```
-* View ADFS / WAP Related Counters
+ * Create a blg getting sample every 15 seconds, with a max file size of 100 mb, circular
+ ```
+ get-counter -Counter $counters -PipelineVariable perfcounter -SampleInterval 15  | Export-Counter -Path ".\dc_perf_collection.blg" -maxsize (100mb) -circular
+ ```
+## View ADFS / WAP Related Counters
 ```
 $counters = "\AD FS\*","\AD FS Proxy\*","\Memory\*","\PhysicalDisk(*)\*","\Process(*)\*","\Processor(*)\*","\TCPv4\*"
 get-counter -Counter $counters | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 | select `
