@@ -39,6 +39,11 @@ get-counter  | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 |
     @{n= "Object";e={($_.path -split("\\"))[3]}},@{n= "Counter";e={($_.path -split("\\"))[4]}}, `
     instancename, CookedValue | format-table -AutoSize -wrap -GroupBy object
 ```
+* view counters from remote computer
+```
+Get-Counter -Computer Server1,Server2,Server3 -MaxSamples 5
+```
+
 # Useful Examples
 ## View Domain Controller Related Counters
 * Store Domain Controller Counter Objects in Array for the cmdlet to use
