@@ -24,6 +24,15 @@ start-process -filepath "notepad.exe"
 stop-process -name notepad
 stop-process -id 123
 ```
+# Using Win32_Process WMI/CIM Class
+```
+Get-CimInstance -classname Win32_Process | more
+```
+* Get Process owner using method
+```
+$proc = Get-CimInstance Win32_Process -Filter "name = 'notepad.exe'"
+Invoke-CimMethod -InputObject $proc -MethodName GetOwner
+```
 # Using Windows CMDs
 * list all task
 ```
