@@ -17,4 +17,45 @@ Get-WinEvent -ListProvider * | more
 get-winevent -LogName system | more
 get-winevent -LogName 'Microsoft-Windows-AAD/Operational' | more
 ```
+* Return the first 15 events from log
+```
+get-winevent -LogName system -MaxEvents 15
+```
+* Return Events from a remote computer
+```
+get-winevent -LogName system -MaxEvents 15 -computername server1,server2
+```
+# Use Filtering with filterhashtable, RECOMMENDED!!!!
+* Retrieve Events logs for Today using filterhashtable
+```
+Get-WinEvent -FilterHashtable @{logname='system'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+```
+* View Events over the last 5 Days
+```
+Get-WinEvent -FilterHashtable @{logname='system'; StartTime=(Get-Date) - (New-TimeSpan -Day 5)} | ft -AutoSize –Wrap | more
+```
+*Note: (Get-Date) - (New-TimeSpan -Day 5)  this will grab the date for 5 days ago.*
+*Note: or (get-date).adddays(-5)*
+* Filter based on Event ID for Today
+```
+Get-WinEvent -FilterHashtable @{logname='system'; id=1502; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+```
+# Domain Controller Event Log Examples
+* View Today's Events
+```
+Get-WinEvent -FilterHashtable @{logname='System'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+Get-WinEvent -FilterHashtable @{logname='Security'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+Get-WinEvent -FilterHashtable @{logname='Application'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+Get-WinEvent -FilterHashtable @{logname='Directory Service'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+Get-WinEvent -FilterHashtable @{logname='DFS Replication'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+Get-WinEvent -FilterHashtable @{logname='DNS Server'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+Get-WinEvent -FilterHashtable @{logname='Active Directory Web Services'; StartTime=(Get-Date).date} | ft -AutoSize –Wrap | more
+```
+# Clean Export to CSV File
+*Problem is the message field doesnt export correctly*
+```
+Get-WinEvent -FilterHashTable @{LogName='System'; StartTime=(Get-Date).date} -ErrorAction SilentlyContinue | `
+    Select-Object Machinename, TimeCreated, ID, UserId,LevelDisplayName,ProviderName,`
+    @{n= "Message";e={ ($_.Message -Replace “`r`n|`r|`n”,” ”).Trim() }} | Export-Csv .\system.csv -NoTypeInformation
+```
 
