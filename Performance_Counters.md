@@ -9,31 +9,39 @@ get-help get-counter
 ```
 Get-counter
 ```
-* Gets list of objects available
+* Gets list of performance objects available
 ```
 Get-counter –listset * | more
 ```
-* Cleaner list of counters
+* Cleaner list of counter objects
 ```
 Get-Counter -ListSet * | Format-Wide CounterSetName | more
 ```
-* Gets list of available counter under a object
+* Gets list of available counters under an object
 ```
 Get-Counter -ListSet Memory | select -expandproperty Paths
 ```
-* To get information on a single counter
+* To get value on a single counter
 ```
 Get-Counter -Counter "\physicaldisk(_total)\current disk queue length“
 ```
-* To get 5 collections of a counter
+* To get values from all counters in an object on a single counter
+```
+Get-Counter -Counter "\physicaldisk(_total)\*“
+```
+* To get 5 values of a counter
 ```
 Get-Counter -Counter "\physicaldisk(_total)\current disk queue length" -MaxSamples 5 
 ```
-* To get a continuous collection of a counter
+* To get values from two seperate counters
+```
+Get-Counter -Counter "\physicaldisk(_total)\current disk queue length","\Memory\Available MBytes"
+```
+* To get a continuous values from a counter
 ```
 Get-Counter -Continuous -Counter "\physicaldisk(_total)\current disk queue length" 
 ```
-* View Counters in a clearer format using calculated properties
+* View Counters in a cleaner format using calculated properties
 ```
 get-counter  | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 | select `
     @{n= "Object";e={($_.path -split("\\"))[3]}},@{n= "Counter";e={($_.path -split("\\"))[4]}}, `
