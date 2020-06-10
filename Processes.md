@@ -24,13 +24,32 @@ start-process -filepath "notepad.exe"
 stop-process -name notepad
 stop-process -id 123
 ```
-#Dump Process using Task Manager
+# Using Windows CMDs
+* list all task
+```
+tasklist | more
+```
+* List process with additional information like user
+```
+tasklist /v | more
+```
+* List processes with service information
+```
+tasklist /svc | more
+```
+* Stop a process
+```
+taskkill /F /PID 1242
+taskkill /IM "notepad.exe" /F
+```
+
+# Dump Process using Task Manager
 ```
 taskmgr
 ```
 * In Process tab locate process to dump
 * Right clich and select create dump file
-#Dump Process using Proc Dump
+# Dump Process using Proc Dump
 * Requires [ProcDump from Sysinternals](https://docs.microsoft.com/en-us/sysinternals/downloads/procdump)
 ```
 procdump lsass
