@@ -58,4 +58,18 @@ Get-WinEvent -FilterHashTable @{LogName='System'; StartTime=(Get-Date).date} -Er
     Select-Object Machinename, TimeCreated, ID, UserId,LevelDisplayName,ProviderName,`
     @{n= "Message";e={ ($_.Message -Replace “`r`n|`r|`n”,” ”).Trim() }} | Export-Csv .\system.csv -NoTypeInformation
 ```
-
+# Learn more about get-winevent
+```
+Get-help get-winevent
+Get-help get-winevent -examples
+Get-help get-winevent -full
+Get-help get-winevent -detailed
+```
+* Help with syntax
+```
+Get-command get-winevent -syntax
+```
+* Learn about the object type - System.Diagnostics.Eventing.Reader.EventLogRecord
+```
+get-winevent -LogName system -MaxEvents 1 | get-member
+```
