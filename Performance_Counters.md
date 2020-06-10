@@ -41,7 +41,7 @@ get-counter  | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 |
 ```
 * view counters from remote computer
 ```
-Get-Counter -Computer Server1,Server2,Server3 -MaxSamples 5
+Get-Counter -computername Server1,Server2,Server3 -MaxSamples 5
 ```
 
 # Useful Examples
