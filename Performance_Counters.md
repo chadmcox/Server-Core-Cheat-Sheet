@@ -33,7 +33,7 @@ Get-Counter -Counter "\physicaldisk(_total)\current disk queue length" -MaxSampl
 ```
 Get-Counter -Continuous -Counter "\physicaldisk(_total)\current disk queue length" 
 ```
-*View Counters in a clearer format using calculated properties
+* View Counters in a clearer format using calculated properties
 ```
 get-counter  | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 | select `
     @{n= "Object";e={($_.path -split("\\"))[3]}},@{n= "Counter";e={($_.path -split("\\"))[4]}}, `
