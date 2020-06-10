@@ -1,11 +1,8 @@
-# There are a few ways to map a network drive
-
 ## Using PSDrive in PowerShell
 ```
 get-help about_providers
 
 ```
-
 * No seperate credentials needed
 ```
 New-PSDrive -Name "X" -PSProvider FileSystem -Root $network_path
@@ -25,8 +22,7 @@ get-psdrive -provider FileSystem
 remove-psdrive x:
 ```
 ## Using Net Use CMD
-#https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/gg651155(v=ws.11)
-
+[LINK: Net use](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/gg651155(v=ws.11))
 * Using current logged on cred
 ```
 net use x: \\server\share
