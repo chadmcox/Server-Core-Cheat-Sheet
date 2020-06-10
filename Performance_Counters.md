@@ -46,7 +46,7 @@ get-counter  | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 |
 $counters = "\Netlogon(_Total)\*","\Security System-Wide Statistics\NTLM Authentications", `
   "\Security System-Wide Statistics\Kerberos Authentications","\DirectoryServices(*)\*","\Database(lsass)\*", `
   "\NTDS\*","\Memory\*","\PhysicalDisk(*)\*","\Processor(*)\*","\TCPv4\*","\TCPv6\*","\DNS\*"
- ``
+ ```
 ** View in console
 get-counter -Counter $counters | select -ExpandProperty CounterSamples | where cookedvalue -gt 0 | select `
     @{n= "Object";e={($_.path -split("\\"))[3]}}, @{n= "Counter";e={($_.path -split("\\"))[4]}}, `
