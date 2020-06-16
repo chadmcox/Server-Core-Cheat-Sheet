@@ -1,11 +1,13 @@
 # Using PowerShell
+[Registry provider](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/About/about_Registry_Provider?view=powershell-7)
+
 * Read a registry key
 ```
-
+Get-Item -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
 ```
 * Read a registry value
 ```
-
+Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
 ```
 * Read all subkeys and values
 ```
