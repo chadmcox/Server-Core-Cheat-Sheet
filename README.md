@@ -4,7 +4,9 @@
 #### [Performance Counters](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Performance_Counters.md)
 * The idea is to show how to get perfmon related data and even perform perfmon captures.
 #### [Event Logs](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Event_Logs.md)
-* Different examples how to get data from event logs
+* Different examples how to get data from event logs.
 #### [Process](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Processes.md)
-* Different examples how to get data from event logs
+* Different examples on how to work with processes.
+#### [Process](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Registry.md)
+* Different examples how to work with the registry.
 
