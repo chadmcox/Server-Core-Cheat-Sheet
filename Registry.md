@@ -1,9 +1,9 @@
-#Using PowerShell
+# Using PowerShell
 
 
 
 
-#Using Legacy Commands
+# Using Legacy Commands
 
 [REG](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/reg)
 
