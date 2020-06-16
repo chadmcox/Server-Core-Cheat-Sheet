@@ -7,6 +7,6 @@
 * Different examples how to get data from event logs.
 #### [Process](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Processes.md)
 * Different examples on how to work with processes.
-#### [Process](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Registry.md)
+#### [Registry](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Registry.md)
 * Different examples how to work with the registry.
 
