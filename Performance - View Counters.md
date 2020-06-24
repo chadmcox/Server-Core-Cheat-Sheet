@@ -99,3 +99,8 @@ get-counter -Counter $counters | select -ExpandProperty CounterSamples | where c
     @{n= "Object";e={($_.path -split("\\"))[3]}}, @{n= "Counter";e={($_.path -split("\\"))[4]}}, `
     instancename, CookedValue | format-table -AutoSize -wrap -GroupBy object | more
  ```
+ #Using CMD
+* To get value on a single counter, continuous
+```
+typeperf "\physicaldisk(_total)\current disk queue length“
+```
