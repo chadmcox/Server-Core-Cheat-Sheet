@@ -13,7 +13,7 @@ pktmon start --etw -p 0
 pktmon stop
 ```
 [pktmon](https://ss64.com/nt/pktmon.html)
-[How to use network snigger](https://www.thewindowsclub.com/network-sniffer-tool-pktmon-exe-in-windows-10/)
+[How to use network sniffer](https://www.thewindowsclub.com/network-sniffer-tool-pktmon-exe-in-windows-10/)
 
 * Using Netsh Trace
 
