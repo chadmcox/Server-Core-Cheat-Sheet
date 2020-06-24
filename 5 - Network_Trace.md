@@ -34,7 +34,7 @@ netsh trace start scenario=netconnection capture=yes tracefile=c:\perflog\networ
 #duplicate issue
 netsh trace stop
 ```
-(Netsh Commands for Network Trace in Windows Server 2008 R2 and Windows 7)[https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd878517(v=ws.10)?redirectedfrom=MSDN]  
+[Netsh Commands for Network Trace in Windows Server 2008 R2 and Windows 7](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd878517(v=ws.10)?redirectedfrom=MSDN)   
 
 ## Using Powershell
 ```
