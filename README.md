@@ -16,5 +16,5 @@
 * Different examples how to get data from event logs.
 ### Network
 #### [Setup Network Trace](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Registry.md)
-* Different examples how to work with the registry.
+* Different examples how to set up network traces on local computer.
 
