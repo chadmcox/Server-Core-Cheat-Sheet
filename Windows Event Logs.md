@@ -73,3 +73,21 @@ Get-command get-winevent -syntax
 ```
 get-winevent -LogName system -MaxEvents 1 | get-member
 ```
+
+# Event Logs using CMD
+* View Events all events from a log
+```
+wevtutil qe System /format:text | more /c 
+```
+* Return the first 15 events from log
+```
+wevtutil qe System /c:15 /rd:true /f:text | more /c
+```
+* Return Events from a remote computer (maynot work due to firewall settings on remote computer)
+```
+wevtutil qe System /format:text /r:server1 | more /c 
+```
+* Return based on Event ID
+```
+WEVTUtil qe System /count:20 /rd:true /format:text /q:"Event[System[(EventID=12)]]"
+```
