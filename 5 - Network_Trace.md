@@ -22,8 +22,8 @@ pktmon start --etw
 #duplicate issue
 pktmon stop
 ```
-** [pktmon](https://ss64.com/nt/pktmon.html)
-** [How to use network sniffer](https://www.thewindowsclub.com/network-sniffer-tool-pktmon-exe-in-windows-10/)
+** [pktmon](https://ss64.com/nt/pktmon.html)  
+** [How to use network sniffer](https://www.thewindowsclub.com/network-sniffer-tool-pktmon-exe-in-windows-10/)  
 
 * Using Netsh Trace
 
