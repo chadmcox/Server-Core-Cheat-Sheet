@@ -12,7 +12,7 @@
 #### [Setup Performance Capture](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Performance%20-%20Setup%20Capture.md)
 * The idea is to show how to create a permon capture.
 ### Logging
-#### [Event Logs](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Event_Logs.md)
+#### [Event Logs](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Windows%20Event%20Logs.md)
 * Different examples how to get data from event logs.
 ### Network
 #### [Setup Network Trace](https://github.com/chadmcox/Server-Core-Cheat-Sheet/blob/master/Registry.md)
